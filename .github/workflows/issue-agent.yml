@@ -27,7 +27,8 @@ jobs:
       - name: Run Agent
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # fallback
+          GH_TOKEN: ${{ secrets.GH_PAT }}             # gh CLI öncelikle GH_TOKEN'ı kullanır
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           
           ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
