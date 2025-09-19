@@ -32,7 +32,8 @@ def main():
     title = issue["title"]; body = issue["body"]
 
     # 1) Branch aç
-    branch = "agent/" + re.sub(r"[^a-zA-Z0-9-_]+","-", title.lower())[:40]
+    # branch = "agent/" + re.sub(r"[^a-zA-Z0-9-_]+","-", title.lower())[:40]
+    branch = f"agent/issue-{ISSUE_NUMBER}-{slugified_title}"
     git(f"git checkout -b {branch}")
 
     # 2) Kod değişiklik planı + patch üret
