@@ -19,7 +19,7 @@ def read_issue():
 def ask_model(system, user):
     client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     msg = client.messages.create(
-        model="claude-3-7-sonnet-latest",
+        model="claude-sonnet-4",
         max_tokens=3000,
         temperature=0.2,
         system=system,
