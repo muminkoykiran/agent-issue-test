@@ -29,5 +29,15 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          
+          ANTHROPIC_AUTH_TOKEN: ${{ secrets.ANTHROPIC_AUTH_TOKEN }}
+          ANTHROPIC_BASE_URL: ${{ secrets.ANTHROPIC_BASE_URL }}
+          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
+          ANTHROPIC_SMALL_FAST_MODEL: ${{ secrets.ANTHROPIC_SMALL_FAST_MODEL }}
+          BASH_DEFAULT_TIMEOUT_MS: ${{ secrets.BASH_DEFAULT_TIMEOUT_MS }}
+          BASH_MAX_TIMEOUT_MS: ${{ secrets.BASH_MAX_TIMEOUT_MS }}
+          MCP_TIMEOUT: ${{ secrets.MCP_TIMEOUT }}
+          MCP_TOOL_TIMEOUT: ${{ secrets.MCP_TOOL_TIMEOUT }}
+          
           REPO_FULL: ${{ github.repository }}
         run: python .github/agent/issue_agent.py
